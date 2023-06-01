@@ -1,39 +1,44 @@
-console.log("Cześć! Dzisiaj liczymy mamonę!");
+{
+    console.log("Cześć! Dzisiaj liczymy mamonę!");
+    const calculateResult = (amount, currency) => {
+        const EUR = 4.51;
+        const USD = 4.17;
+        const GBP = 5.2;
+        const CHF = 4.66;
+        const CZK = 0.19;
 
-let formElement = document.querySelector(".js-form");
-let currencyElement = document.querySelector(".js-currencyOption");
-let amountElement = document.querySelector(".js-amount");
-let resultElement = document.querySelector(".js-result");
+        switch (currency) {
+            case "EUR":
+                return amount / EUR;
+            case "USD":
+                return amount / USD;
+            case "GBP":
+                return amount / GBP;
+            case "CHF":
+                return amount / CHF;
+            case "CZK":
+                return amount / CZK;
+        }
+    };
+    const updateResultText = (result, currency) => {
+        const resultElement = document.querySelector(".js-result");
+        resultElement.innerText = `${result.toFixed(2)} ${currency}`;
+    };
+    const onFormSubmit = (event) => {
+        event.preventDefault();
 
-formElement.addEventListener("submit", (event) => {
-    event.preventDefault();
+        const currencyElement = document.querySelector(".js-currencyOption");
+        const amountElement = document.querySelector(".js-amount");
+        const amount = +amountElement.value;
+        const currency = currencyElement.value;
+        let result = calculateResult(amount, currency);
+        updateResultText(result, currency);
+    };
 
-    let amount = +amountElement.value;
-    let currency = currencyElement.value;
-    let result;
-    let EUR = 4.51;
-    let USD = 4.17;
-    let GBP = 5.2;
-    let CHF = 4.66;
-    let CZK = 0.19;
+    const init = () => {
+        const formElement = document.querySelector(".js-form");
+        formElement.addEventListener("submit", onFormSubmit);
+    };
 
-    switch (currency) {
-        case "EUR":
-            result = amount / EUR;
-            break;
-        case "USD":
-            result = amount / USD;
-            break;
-        case "GBP":
-            result = amount / GBP;
-            break;
-        case "CHF":
-            result = amount / CHF;
-            break;
-        case "CZK":
-            result = amount / CZK;
-            break;
-    }
-
-    resultElement.innerText = `${result.toFixed(2)} ${currency}`;
-});
+    init();
+}
