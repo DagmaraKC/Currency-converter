@@ -1,5 +1,4 @@
 {
-    console.log("Cześć! Dzisiaj liczymy mamonę!");
     const calculateResult = (amount, currency) => {
         const EUR = 4.51;
         const USD = 4.17;
