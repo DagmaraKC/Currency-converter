@@ -43,8 +43,8 @@
 
 .form__fieldset {
     border-radius: 5px;
-    border: 1px solid #00425a;
-    background: #ffffffd5;
+    border: 2px solid #00425a;
+    background: #ffffff;
 }
 
 .form__additionalInfo {
