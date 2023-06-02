@@ -1,7 +1,16 @@
-## Kalkulator walut
+## currency calculator
+![Currency calculator](/images/converter.png)
+## Demo
+[Check how it works](https://dagmarakc.github.io/Currency-converter/)
 
-Ten projekt to prosty kalkulator walut zbudowany z wykorzystaniem formularza i funkcji switch.
+# Technologies used
+- HTML
+- CSS(BEM convention)
+- Java Script
+- Normalize
 
-![Kalkulator walut](/images/converter.png)
-
-[Sprawdź jak działa](https://dagmarakc.github.io/Currency-converter/)
+## Function
+1. Initiation
+2. Submit with event prevent default
+3. Calculate result
+4. Text with result updated
